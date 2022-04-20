@@ -17,7 +17,8 @@ using System.Web.Mvc;
 
 namespace DMS.Controllers
 {
-    [CustomAuthentication]
+    //[CustomAuthentication]
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         private MainEntities db;
@@ -43,7 +44,7 @@ namespace DMS.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult lifestyle()
         {
             ViewBag.Message = "Your application description page.";
             return View();
