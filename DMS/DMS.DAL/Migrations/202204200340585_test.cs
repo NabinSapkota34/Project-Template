@@ -7,6 +7,12 @@ namespace DMS.DAL.Migrations
     {
         public override void Up()
         {
+            Sql(@"create table test(
+                   id int primary key identity(1,1),
+                   name varchar(255) not null,
+                   address nvarchar(255) not null)
+                 
+");
         }
         
         public override void Down()
