@@ -135,6 +135,9 @@
     <Compile Include="DatabaseContext\des01designations.cs">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseContext\editor.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseContext\emp01employee.cs">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
@@ -158,6 +161,9 @@
     </Compile>
     <Compile Include="DatabaseContext\MetaData\EmployeeMD.cs" />
     <Compile Include="DatabaseContext\PartialClasses.cs" />
+    <Compile Include="DatabaseContext\test.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseContext\UserCode.cs">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
@@ -211,6 +217,14 @@
     <Compile Include="Migrations\202204210244388_added_new_table.cs" />
     <Compile Include="Migrations\202204210244388_added_new_table.Designer.cs">
       <DependentUpon>202204210244388_added_new_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205220144586_added_new_table_for_news.cs" />
+    <Compile Include="Migrations\202205220144586_added_new_table_for_news.Designer.cs">
+      <DependentUpon>202205220144586_added_new_table_for_news.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205220204293_added_new_table_for_news1.cs" />
+    <Compile Include="Migrations\202205220204293_added_new_table_for_news1.Designer.cs">
+      <DependentUpon>202205220204293_added_new_table_for_news1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -306,6 +320,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204210244388_added_new_table.resx">
       <DependentUpon>202204210244388_added_new_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205220144586_added_new_table_for_news.resx">
+      <DependentUpon>202205220144586_added_new_table_for_news.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205220204293_added_new_table_for_news1.resx">
+      <DependentUpon>202205220204293_added_new_table_for_news1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

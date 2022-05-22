@@ -71,6 +71,15 @@
           <Property Name="des01updated_date_eng" Type="datetime" Nullable="false" />
           <Property Name="des01code" Type="varchar" MaxLength="25" Nullable="false" />
         </EntityType>
+        <EntityType Name="editor">
+          <Key>
+            <PropertyRef Name="e_id" />
+          </Key>
+          <Property Name="e_id" Type="int" Nullable="false" />
+          <Property Name="e_name" Type="varchar" MaxLength="20" />
+          <Property Name="e_address" Type="varchar" MaxLength="20" />
+          <Property Name="e_phonenumber" Type="int" />
+        </EntityType>
         <EntityType Name="emp01employee">
           <Key>
             <PropertyRef Name="emp01uin" />
@@ -112,6 +121,14 @@
           <Property Name="lvl01updated_by" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="lvl01updated_date_nep" Type="char" MaxLength="10" Nullable="false" />
           <Property Name="lvl01updated_date_eng" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="test">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="UserCodes">
           <Key>
@@ -219,8 +236,10 @@
           <EntitySet Name="cfg01configurations" EntityType="Self.cfg01configurations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dep01department" EntityType="Self.dep01department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="des01designations" EntityType="Self.des01designations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="editor" EntityType="Self.editor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="emp01employee" EntityType="Self.emp01employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="lvl01employee_levels" EntityType="Self.lvl01employee_levels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="test" EntityType="Self.test" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserCodes" EntityType="Self.UserCodes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usr05users" EntityType="Self.usr05users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_emp01employee_bra01branches" Association="Self.FK_emp01employee_bra01branches">
@@ -285,6 +304,8 @@
             <End Role="emp01employee" EntitySet="emp01employee" />
             <End Role="usr05users" EntitySet="usr05users" />
           </AssociationSet>
+          <EntitySet Name="tests" EntityType="BIT4thSemModel.test" />
+          <EntitySet Name="editors" EntityType="BIT4thSemModel.editor" />
         </EntityContainer>
         <EntityType Name="bra01branches">
           <Key>
@@ -507,6 +528,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="test">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="editor">
+          <Key>
+            <PropertyRef Name="e_id" />
+          </Key>
+          <Property Name="e_id" Type="Int32" Nullable="false" />
+          <Property Name="e_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="e_address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="e_phonenumber" Type="Int32" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -654,6 +692,25 @@
                 <ScalarProperty Name="usr05type" ColumnName="usr05type" />
                 <ScalarProperty Name="usr05bra01uin" ColumnName="usr05bra01uin" />
                 <ScalarProperty Name="usr05userId" ColumnName="usr05userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tests">
+            <EntityTypeMapping TypeName="BIT4thSemModel.test">
+              <MappingFragment StoreEntitySet="test">
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="editors">
+            <EntityTypeMapping TypeName="BIT4thSemModel.editor">
+              <MappingFragment StoreEntitySet="editor">
+                <ScalarProperty Name="e_phonenumber" ColumnName="e_phonenumber" />
+                <ScalarProperty Name="e_address" ColumnName="e_address" />
+                <ScalarProperty Name="e_name" ColumnName="e_name" />
+                <ScalarProperty Name="e_id" ColumnName="e_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
